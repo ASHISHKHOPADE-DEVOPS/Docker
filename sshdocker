@@ -1,0 +1,14 @@
+ # Use Amazon Linux as the base image
+FROM amazonlinux
+
+# Install SSH server and client
+RUN yum install -y openssh-server openssh-clients
+
+# Create directory for SSH daemon
+RUN mkdir -p /var/run/sshd
+
+# Expose SSH port
+EXPOSE 22
+
+# Start SSH daemon
+CMD ["/usr/sbin/sshd", "-D"]
