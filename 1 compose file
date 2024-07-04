@@ -1,0 +1,8 @@
+version: "2.2"
+
+services:
+  webapp1:
+    image: nginx
+
+  webapp2:
+    image: nginx
